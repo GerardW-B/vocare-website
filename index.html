@@ -286,19 +286,19 @@
   <!-- Contact / CTA -->
   <section id="contact" class="py-20">
     <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-white mb-6 animate-fade-in">Let's Talk</h2>
+      <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-white mb-6 animate-fade-in">Launching Soon</h2>
       <p class="text-xl text-blue-300 mb-10 animate-fade-in delay-100">
-        Book a free 30-minute strategy session to explore your needs and potential program fit — no obligation.
+        Want to find out more? Join our waitlist and be the first to know when we launch.
       </p>
       
       <div class="bg-slate-800 rounded-xl p-8 shadow-lg border border-sky-800 animate-fade-in delay-200">
         <!-- Success Message -->
         <div id="success-message" class="success-message">
-          <p>✅ Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.</p>
+          <p>✅ Thank you for joining our waitlist! We'll send you updates about our launch and exclusive early access offers.</p>
         </div>
 
         <!-- Contact Form with Netlify Integration -->
-        <form name="vocare-contact" method="POST" netlify netlify-honeypot="bot-field" action="/success" class="space-y-6">
+        <form name="vocare-contact" method="POST" netlify netlify-honeypot="bot-field" class="space-y-6">
           <!-- Hidden field for spam protection -->
           <div style="display: none;">
             <label>Don't fill this out if you're human: <input name="bot-field" /></label>
@@ -325,10 +325,18 @@
             </div>
           </div>
           <div class="text-left">
-            <label for="message" class="block text-sm font-medium mb-1">What are your main communication challenges? *</label>
-            <textarea id="message" name="message" rows="3" class="w-full p-3 bg-slate-700 border border-sky-800 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" required></textarea>
+            <label for="message" class="block text-sm font-medium mb-1">Tell us about your workplace communication needs</label>
+            <textarea id="message" name="message" rows="3" class="w-full p-3 bg-slate-700 border border-sky-800 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" placeholder="e.g., team size, industry, current challenges..."></textarea>
           </div>
-          <button type="submit" class="w-full md:w-auto bg-gradient text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:opacity-90 transition">Book Your Session Now</button>
+          
+          <div class="text-left">
+            <label class="flex items-start space-x-2">
+              <input type="checkbox" name="newsletter" value="yes" class="mt-1">
+              <span class="text-sm">Sign up to our newsletter for workplace communication tips and program updates</span>
+            </label>
+          </div>
+          
+          <button type="submit" class="w-full md:w-auto bg-gradient text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:opacity-90 transition">Join Waitlist</button>
         </form>
         
         <div class="mt-8 pt-6 border-t border-sky-800">
@@ -388,11 +396,13 @@
       // Let Netlify handle the form submission
       console.log('Form submitted to Netlify');
       
-      // Show success message after a brief delay
+      // Show success message and hide form after submission
       setTimeout(() => {
         successMessage.style.display = 'block';
-        form.style.display = 'none';
-      }, 100);
+        form.reset(); // Clear the form
+        // Scroll to success message
+        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 500);
     });
   </script>
 </body>
