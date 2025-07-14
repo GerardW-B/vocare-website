@@ -43,6 +43,21 @@
       margin-bottom: 1rem;
       display: none;
     }
+
+    /* Text truncation utilities for article cards */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
   </style>
 </head>
 <body class="bg-slate-900 text-gray-200">
@@ -52,6 +67,7 @@
       <div class="flex items-center space-x-2">
         <span class="text-2xl font-semibold tracking-tight bg-gradient bg-clip-text text-transparent">Vocare</span>
       </div>
+      <a href="#articles" class="text-gray-300 hover:text-blue-500 font-medium">Insights</a>
       <nav class="hidden md:flex items-center space-x-8 text-sm">
         <a href="#mission" class="text-gray-300 hover:text-blue-500 font-medium">Our Mission</a>
         <a href="#market-need" class="text-gray-300 hover:text-blue-500 font-medium">Why Now</a>
@@ -90,80 +106,9 @@
           <h3 class="text-2xl font-semibold text-white text-center mb-8">Care Service Ecosystem</h3>
           <div class="relative max-w-4xl mx-auto bg-slate-700 rounded-2xl p-8">
             
-            <svg viewBox="0 0 800 500" class="w-full h-auto">
-              <!-- Gradient definitions -->
-              <defs>
-                <linearGradient id="orgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:0.85" />
-                  <stop offset="100%" style="stop-color:#6366f1;stop-opacity:0.85" />
-                </linearGradient>
-                <linearGradient id="workerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
-                  <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
-                </linearGradient>
-                <linearGradient id="clientGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style="stop-color:#93c5fd;stop-opacity:1" />
-                  <stop offset="100%" style="stop-color:#60a5fa;stop-opacity:1" />
-                </linearGradient>
-              </defs>
-              
-              <!-- Organisation (outer curved teardrop shape) -->
-              <path d="M 100 120 
-                       Q 80 80 140 60 
-                       Q 300 20 500 80 
-                       Q 650 120 680 200 
-                       Q 700 280 650 350 
-                       Q 600 400 500 420 
-                       Q 350 450 250 420 
-                       Q 150 390 120 320 
-                       Q 90 250 100 200 
-                       Q 95 160 100 120 Z" 
-                    fill="url(#orgGradient)" 
-                    class="drop-shadow-lg"/>
-              
-              <!-- Care Worker (middle flowing teardrop) -->
-              <path d="M 180 200 
-                       Q 160 160 200 140 
-                       Q 320 100 480 140 
-                       Q 580 170 600 220 
-                       Q 620 270 580 310 
-                       Q 540 350 480 370 
-                       Q 380 390 300 370 
-                       Q 220 350 200 300 
-                       Q 170 250 180 220 
-                       Q 175 210 180 200 Z" 
-                    fill="url(#workerGradient)" 
-                    class="drop-shadow-lg"/>
-              
-              <!-- Client (inner circle) -->
-              <circle cx="380" cy="320" r="80" 
-                      fill="url(#clientGradient)" 
-                      class="drop-shadow-lg"/>
-              
-              <!-- Text labels with better positioning -->
-              <text x="400" y="140" text-anchor="middle" class="fill-white font-bold text-xl">Organisation</text>
-              <text x="420" y="240" text-anchor="middle" class="fill-white font-bold text-lg">Care Worker</text>
-              <text x="380" y="330" text-anchor="middle" class="fill-white font-bold text-lg">Client</text>
-              
-              <!-- Descriptive text positioned around the shapes -->
-              <foreignObject x="500" y="60" width="250" height="60">
-                <div class="text-sm text-gray-300 font-medium">
-                  Provides structure, support, and resources for quality care delivery
-                </div>
-              </foreignObject>
-              
-              <foreignObject x="50" y="180" width="250" height="60">
-                <div class="text-sm text-gray-300 font-medium">
-                  Delivers compassionate, skilled care with confidence and clarity
-                </div>
-              </foreignObject>
-              
-              <foreignObject x="480" y="360" width="250" height="60">
-                <div class="text-sm text-gray-300 font-medium">
-                  Receives personalized, high-quality care and support
-                </div>
-              </foreignObject>
-            </svg>
+            <img src="assets/care-ecosystem.png" 
+     alt="Care Service Ecosystem showing the relationship between Organisation, Worker, and Client in teardrop shapes" 
+     class="w-full h-auto max-w-md mx-auto rounded-lg shadow-lg" />
             
           </div>
         </div>
@@ -460,6 +405,104 @@
     </div>
   </section>
 
+  <!-- Featured Articles Section -->
+<section id="articles" class="py-16 border-b border-sky-800">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-white mb-4 text-center animate-fade-in">Latest Insights</h2>
+    <p class="text-lg text-center text-blue-300 mb-12 animate-fade-in delay-100">
+      Exploring workplace communication, cultural fluency, and organisational success
+    </p>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Article 1 - Medium Example -->
+      <article class="bg-slate-800 rounded-xl p-6 shadow-lg hover:bg-slate-700 transition-colors animate-fade-in delay-100">
+        <div class="flex items-center space-x-2 mb-3">
+          <svg class="w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75S24 8.83 24 12z"/>
+          </svg>
+          <span class="text-sm text-gray-400">Medium</span>
+          <span class="text-sm text-gray-500">•</span>
+          <span class="text-sm text-gray-400">5 min read</span>
+        </div>
+        <h3 class="text-xl font-semibold text-white mb-3 line-clamp-2">
+          <a href="#" class="hover:text-blue-300 transition-colors">
+            Why Communication Training is Your Best ROI Investment in 2024
+          </a>
+        </h3>
+        <p class="text-gray-300 mb-4 line-clamp-3">
+          Discover how investing in workplace communication training delivers measurable returns through improved retention, productivity, and client satisfaction...
+        </p>
+        <div class="flex items-center justify-between">
+          <span class="text-sm text-gray-400">Jan 15, 2024</span>
+          <a href="#" class="text-blue-400 hover:text-blue-300 text-sm font-medium transition-colors">
+            Read on Medium →
+          </a>
+        </div>
+      </article>
+      
+      <!-- Article 2 - LinkedIn Example -->
+      <article class="bg-slate-800 rounded-xl p-6 shadow-lg hover:bg-slate-700 transition-colors animate-fade-in delay-200">
+        <div class="flex items-center space-x-2 mb-3">
+          <svg class="w-5 h-5 text-blue-500" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+          <span class="text-sm text-gray-400">LinkedIn</span>
+          <span class="text-sm text-gray-500">•</span>
+          <span class="text-sm text-gray-400">Article</span>
+        </div>
+        <h3 class="text-xl font-semibold text-white mb-3 line-clamp-2">
+          <a href="#" class="hover:text-blue-300 transition-colors">
+            5 Signs Your Migrant Workforce Needs Communication Support
+          </a>
+        </h3>
+        <p class="text-gray-300 mb-4 line-clamp-3">
+          Are you seeing these red flags in your organisation? Learn to identify when your talented migrant employees need targeted language support to thrive...
+        </p>
+        <div class="flex items-center justify-between">
+          <span class="text-sm text-gray-400">Dec 28, 2023</span>
+          <a href="#" class="text-blue-400 hover:text-blue-300 text-sm font-medium transition-colors">
+            Read on LinkedIn →
+          </a>
+        </div>
+      </article>
+      
+      <!-- Article 3 - Medium Example -->
+      <article class="bg-slate-800 rounded-xl p-6 shadow-lg hover:bg-slate-700 transition-colors animate-fade-in delay-300">
+        <div class="flex items-center space-x-2 mb-3">
+          <svg class="w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75S24 8.83 24 12z"/>
+          </svg>
+          <span class="text-sm text-gray-400">Medium</span>
+          <span class="text-sm text-gray-500">•</span>
+          <span class="text-sm text-gray-400">7 min read</span>
+        </div>
+        <h3 class="text-xl font-semibold text-white mb-3 line-clamp-2">
+          <a href="#" class="hover:text-blue-300 transition-colors">
+            Cultural Fluency vs English Proficiency: What Care Organisations Need to Know
+          </a>
+        </h3>
+        <p class="text-gray-300 mb-4 line-clamp-3">
+          There's a crucial difference between speaking English well and understanding workplace culture. Here's how to bridge both gaps for your team...
+        </p>
+        <div class="flex items-center justify-between">
+          <span class="text-sm text-gray-400">Dec 12, 2023</span>
+          <a href="#" class="text-blue-400 hover:text-blue-300 text-sm font-medium transition-colors">
+            Read on Medium →
+          </a>
+        </div>
+      </article>
+      
+    </div>
+    
+    <div class="text-center mt-12 animate-fade-in delay-400">
+      <a href="#contact" class="inline-block bg-gradient rounded-lg px-6 py-3 font-semibold shadow-lg hover:opacity-90 transition">
+        Want to discuss these insights? Let's talk →
+      </a>
+    </div>
+  </div>
+</section>
+  
   <!-- Contact / CTA -->
   <section id="contact" class="py-20">
     <div class="max-w-4xl mx-auto px-6 text-center">
@@ -537,6 +580,7 @@
         <a href="#mission" class="hover:text-blue-500">Our Mission</a>
         <a href="#solution" class="hover:text-blue-500">Solution</a>
         <a href="#technology" class="hover:text-blue-500">Technology</a>
+        <a href="#articles" class="hover:text-blue-500">Insights</a>
         <a href="#contact" class="hover:text-blue-500">Contact</a>
       </nav>
       <div class="text-xs text-gray-500 mt-4 md:mt-0">
