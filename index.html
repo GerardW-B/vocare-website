@@ -160,7 +160,7 @@
   <header class="border-b border-sky-800 shadow-lg">
     <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
       <div class="flex items-center space-x-2">
-        <img src="assets/logo-title-transparent-bg.png" alt="Vocare" class="h-8 md:h-10" />
+        <img src="assets/Vocare_logo_white_font_trans_bg_no_subtitle.png" alt="Vocare" class="h-8 md:h-10" />
       </div>
       
       <!-- Desktop Navigation -->
@@ -200,29 +200,12 @@
     </div>
   </header>
 
-  <!-- Video Section (New - Added before mission) -->
-  <section id="intro-video" class="py-12 border-b border-sky-800">
-    <div class="max-w-4xl mx-auto px-6">
-      <div class="video-placeholder rounded-xl p-8 flex flex-col items-center justify-center min-h-[400px] animate-fade-in" onclick="playVideo()">
-        <div class="play-button mb-4">
-          <svg class="w-12 h-12 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M8 5v14l11-7z"/>
-          </svg>
-        </div>
-        <p class="text-xl font-semibold text-white mb-2">Watch Our Introduction Video</p>
-        <p class="text-gray-400">Learn how Vocare transforms workplace communication (1 min)</p>
-      </div>
-      <!-- This div will be replaced with the actual video when clicked -->
-      <div id="video-container" class="hidden rounded-xl overflow-hidden shadow-2xl animate-fade-in"></div>
-    </div>
-  </section>
-
   <!-- Mission Section (Updated - Removed triangle image) -->
   <section id="mission" class="py-20 border-b border-sky-800">
     <div class="max-w-4xl mx-auto px-6">
       <div class="text-center mb-12 animate-fade-in">
         <div class="flex justify-center mb-8">
-          <img src="assets/logo-title-transparent-bg.png" alt="Vocare - Clear speech creates confident people and stronger organisations" class="max-w-xs w-full" />
+          <img src="assets/Vocare_logo_white_font_trans_bg_no_subtitle.png" alt="Vocare - Clear speech creates confident people and stronger organisations" class="max-w-xs w-full" />
         </div>
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-white mb-6 leading-tight">
           Clear speech creates confident people — and stronger organisations.
@@ -249,6 +232,20 @@
       
       <div class="flex flex-col sm:flex-row gap-4 mt-8 justify-center animate-fade-in delay-200">
         <a href="#contact" class="bg-gradient text-white px-8 py-3 rounded-lg font-semibold shadow-lg hover:opacity-90 transition text-center">Book a Strategy Session</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Section (Moved after mission section) -->
+  <section id="intro-video" class="py-12 border-b border-sky-800">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="rounded-xl overflow-hidden shadow-2xl animate-fade-in">
+        <div style="position: relative; padding-bottom: 56.25%; height: 0;">
+          <iframe src="https://www.loom.com/embed/8bd7a6253e4d41ed9d024b76db3bd045?sid=b5130877-5c58-4aa8-8cf8-7762bd9f1bdb&autoplay=0&muted=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+        </div>
+        <div class="bg-slate-800 p-4 text-center">
+          <p class="text-lg font-semibold text-white">Learn how Vocare transforms workplace communication (1 min)</p>
+        </div>
       </div>
     </div>
   </section>
@@ -862,7 +859,7 @@
   <footer class="border-t border-sky-800 py-8">
     <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
       <div class="mb-4 md:mb-0">
-        <img src="assets/logo-title-transparent-bg.png" alt="Vocare" class="h-6" />
+        <img src="assets/Vocare_logo_white_font_trans_bg_no_subtitle.png" alt="Vocare" class="h-6" />
         <p class="text-sm text-gray-400 mt-1">Helping workplaces thrive</p>
       </div>
       <nav class="flex flex-wrap justify-center gap-4 md:gap-6 text-sm text-gray-400">
@@ -882,17 +879,6 @@
   </footer>
 
   <script>
-    // Video placeholder functionality
-    function playVideo() {
-  const placeholder = document.querySelector('.video-placeholder');
-  const container = document.getElementById('video-container');
-  
-  placeholder.style.display = 'none';
-  container.classList.remove('hidden');
-  
-  container.innerHTML = `<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/8bd7a6253e4d41ed9d024b76db3bd045?sid=b5130877-5c58-4aa8-8cf8-7762bd9f1bdb" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>`;
-}
-
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
