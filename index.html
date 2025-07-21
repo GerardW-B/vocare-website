@@ -884,24 +884,14 @@
   <script>
     // Video placeholder functionality
     function playVideo() {
-      const placeholder = document.querySelector('.video-placeholder');
-      const container = document.getElementById('video-container');
-      
-      // Hide placeholder
-      placeholder.style.display = 'none';
-      
-      // Show video container with placeholder message
-      container.classList.remove('hidden');
-      container.innerHTML = `
-        <div class="bg-slate-700 rounded-xl p-20 text-center">
-          <p class="text-xl text-gray-300 mb-4">Video player will appear here</p>
-          <p class="text-gray-400">The introduction video is being prepared and will be available soon!</p>
-        </div>
-      `;
-      
-      // In production, this would be replaced with actual video embed code like:
-      // container.innerHTML = '<iframe src="video-url" class="w-full h-96" frameborder="0" allowfullscreen></iframe>';
-    }
+  const placeholder = document.querySelector('.video-placeholder');
+  const container = document.getElementById('video-container');
+  
+  placeholder.style.display = 'none';
+  container.classList.remove('hidden');
+  
+  container.innerHTML = `<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/8bd7a6253e4d41ed9d024b76db3bd045?sid=b5130877-5c58-4aa8-8cf8-7762bd9f1bdb" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>`;
+}
 
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
