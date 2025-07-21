@@ -124,6 +124,35 @@
       transform: translateY(0);
       transition: opacity 0.2s ease-out, transform 0.2s ease-out;
     }
+
+    /* Video placeholder styling */
+    .video-placeholder {
+      background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+      border: 2px solid #0ea5e9;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .video-placeholder:hover {
+      border-color: #3b82f6;
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+    }
+
+    .play-button {
+      width: 80px;
+      height: 80px;
+      background: rgba(59, 130, 246, 0.9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .video-placeholder:hover .play-button {
+      background: rgba(59, 130, 246, 1);
+      transform: scale(1.1);
+    }
   </style>
 </head>
 <body class="bg-slate-900 text-gray-200">
@@ -171,7 +200,24 @@
     </div>
   </header>
 
-  <!-- Mission Section (New - At the top) -->
+  <!-- Video Section (New - Added before mission) -->
+  <section id="intro-video" class="py-12 border-b border-sky-800">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="video-placeholder rounded-xl p-8 flex flex-col items-center justify-center min-h-[400px] animate-fade-in" onclick="playVideo()">
+        <div class="play-button mb-4">
+          <svg class="w-12 h-12 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+        </div>
+        <p class="text-xl font-semibold text-white mb-2">Watch Our Introduction Video</p>
+        <p class="text-gray-400">Learn how Vocare transforms workplace communication (1 min)</p>
+      </div>
+      <!-- This div will be replaced with the actual video when clicked -->
+      <div id="video-container" class="hidden rounded-xl overflow-hidden shadow-2xl animate-fade-in"></div>
+    </div>
+  </section>
+
+  <!-- Mission Section (Updated - Removed triangle image) -->
   <section id="mission" class="py-20 border-b border-sky-800">
     <div class="max-w-4xl mx-auto px-6">
       <div class="text-center mb-12 animate-fade-in">
@@ -195,16 +241,6 @@
         <p class="text-lg text-gray-200 mb-8 leading-relaxed">
           Our name, <em class="text-blue-300">Vocare</em> — a blend of "voice" and "care" — reflects our mission to empower people through communication. Because when voices are clear, opportunities open up — for individuals, teams, and entire organisations.
         </p>
-        
-        <!-- Healthcare Service Ecosystem Visual -->
-        <div class="my-12">
-          <h3 class="text-2xl font-semibold text-white text-center mb-8">Care Service Ecosystem</h3>
-          <div class="relative max-w-4xl mx-auto bg-slate-700 rounded-2xl p-8">
-            <img src="assets/support_framework_cropped.png" 
-                 alt="Care Service Ecosystem showing the relationship between Organisation, Worker, and Client in teardrop shapes" 
-                 class="w-full h-auto max-w-md mx-auto rounded-lg shadow-lg" />
-          </div>
-        </div>
         
         <div class="mt-8 p-4 bg-slate-700 rounded-lg">
           <p class="font-semibold text-white text-center">Helping care organisations boost retention, trust, and quality of care — through language, connection, and confidence.</p>
@@ -498,7 +534,7 @@
     </div>
   </section>
 
-  <!-- Featured Articles Section -->
+  <!-- Featured Articles Section (Updated - Removed links) -->
   <section id="articles" class="py-16 border-b border-sky-800">
     <div class="max-w-6xl mx-auto px-6">
       <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-white mb-4 text-center animate-fade-in">Latest Insights</h2>
@@ -506,83 +542,68 @@
         Exploring workplace communication, cultural fluency, and organisational success
       </p>
       
+      <div class="bg-slate-700 rounded-lg p-6 text-center mb-12 animate-fade-in delay-100">
+        <p class="text-lg text-gray-300">
+          <strong>Coming Soon:</strong> We're preparing valuable content about workplace communication, cultural fluency, and best practices for care organisations. Check back soon for our latest insights!
+        </p>
+      </div>
+      
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         
-        <!-- Article 1 - Medium Example -->
-        <article class="bg-slate-800 rounded-xl p-6 shadow-lg hover:bg-slate-700 transition-colors animate-fade-in delay-100">
+        <!-- Article 1 - Now just a preview card -->
+        <article class="bg-slate-800 rounded-xl p-6 shadow-lg animate-fade-in delay-100 opacity-75">
           <div class="flex items-center space-x-2 mb-3">
             <svg class="w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="currentColor">
               <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75S24 8.83 24 12z"/>
             </svg>
-            <span class="text-sm text-gray-400">Medium</span>
-            <span class="text-sm text-gray-500">•</span>
-            <span class="text-sm text-gray-400">5 min read</span>
+            <span class="text-sm text-gray-400">Coming Soon</span>
           </div>
-          <h3 class="text-xl font-semibold text-white mb-3 line-clamp-2">
-            <a href="#" class="hover:text-blue-300 transition-colors">
-              Why Communication Training is Your Best ROI Investment in 2024
-            </a>
+          <h3 class="text-xl font-semibold text-gray-400 mb-3 line-clamp-2">
+            Why Communication Training is Your Best ROI Investment in 2024
           </h3>
-          <p class="text-gray-300 mb-4 line-clamp-3">
+          <p class="text-gray-500 mb-4 line-clamp-3">
             Discover how investing in workplace communication training delivers measurable returns through improved retention, productivity, and client satisfaction...
           </p>
           <div class="flex items-center justify-between">
-            <span class="text-sm text-gray-400">Jan 15, 2024</span>
-            <a href="#" class="text-blue-400 hover:text-blue-300 text-sm font-medium transition-colors">
-              Read on Medium →
-            </a>
+            <span class="text-sm text-gray-500">Coming Soon</span>
           </div>
         </article>
         
-        <!-- Article 2 - LinkedIn Example -->
-        <article class="bg-slate-800 rounded-xl p-6 shadow-lg hover:bg-slate-700 transition-colors animate-fade-in delay-200">
+        <!-- Article 2 - Now just a preview card -->
+        <article class="bg-slate-800 rounded-xl p-6 shadow-lg animate-fade-in delay-200 opacity-75">
           <div class="flex items-center space-x-2 mb-3">
-            <svg class="w-5 h-5 text-blue-500" viewBox="0 0 24 24" fill="currentColor">
+            <svg class="w-5 h-5 text-blue-500/50" viewBox="0 0 24 24" fill="currentColor">
               <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
             </svg>
-            <span class="text-sm text-gray-400">LinkedIn</span>
-            <span class="text-sm text-gray-500">•</span>
-            <span class="text-sm text-gray-400">Article</span>
+            <span class="text-sm text-gray-400">Coming Soon</span>
           </div>
-          <h3 class="text-xl font-semibold text-white mb-3 line-clamp-2">
-            <a href="#" class="hover:text-blue-300 transition-colors">
-              5 Signs Your Migrant Workforce Needs Communication Support
-            </a>
+          <h3 class="text-xl font-semibold text-gray-400 mb-3 line-clamp-2">
+            5 Signs Your Migrant Workforce Needs Communication Support
           </h3>
-          <p class="text-gray-300 mb-4 line-clamp-3">
+          <p class="text-gray-500 mb-4 line-clamp-3">
             Are you seeing these red flags in your organisation? Learn to identify when your talented migrant employees need targeted language support to thrive...
           </p>
           <div class="flex items-center justify-between">
-            <span class="text-sm text-gray-400">Dec 28, 2023</span>
-            <a href="#" class="text-blue-400 hover:text-blue-300 text-sm font-medium transition-colors">
-              Read on LinkedIn →
-            </a>
+            <span class="text-sm text-gray-500">Coming Soon</span>
           </div>
         </article>
         
-        <!-- Article 3 - Medium Example -->
-        <article class="bg-slate-800 rounded-xl p-6 shadow-lg hover:bg-slate-700 transition-colors animate-fade-in delay-300">
+        <!-- Article 3 - Now just a preview card -->
+        <article class="bg-slate-800 rounded-xl p-6 shadow-lg animate-fade-in delay-300 opacity-75">
           <div class="flex items-center space-x-2 mb-3">
             <svg class="w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="currentColor">
               <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75S24 8.83 24 12z"/>
             </svg>
-            <span class="text-sm text-gray-400">Medium</span>
-            <span class="text-sm text-gray-500">•</span>
-            <span class="text-sm text-gray-400">7 min read</span>
+            <span class="text-sm text-gray-400">Coming Soon</span>
           </div>
-          <h3 class="text-xl font-semibold text-white mb-3 line-clamp-2">
-            <a href="#" class="hover:text-blue-300 transition-colors">
-              Cultural Fluency vs English Proficiency: What Care Organisations Need to Know
-            </a>
+          <h3 class="text-xl font-semibold text-gray-400 mb-3 line-clamp-2">
+            Cultural Fluency vs English Proficiency: What Care Organisations Need to Know
           </h3>
-          <p class="text-gray-300 mb-4 line-clamp-3">
+          <p class="text-gray-500 mb-4 line-clamp-3">
             There's a crucial difference between speaking English well and understanding workplace culture. Here's how to bridge both gaps for your team...
           </p>
           <div class="flex items-center justify-between">
-            <span class="text-sm text-gray-400">Dec 12, 2023</span>
-            <a href="#" class="text-blue-400 hover:text-blue-300 text-sm font-medium transition-colors">
-              Read on Medium →
-            </a>
+            <span class="text-sm text-gray-500">Coming Soon</span>
           </div>
         </article>
         
@@ -596,7 +617,7 @@
     </div>
   </section>
 
-  <!-- FAQ Section -->
+  <!-- FAQ Section (Updated) -->
   <section id="faq" class="py-16 border-b border-sky-800">
     <div class="max-w-4xl mx-auto px-6">
       <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-white mb-4 text-center animate-fade-in">Frequently Asked Questions</h2>
@@ -607,13 +628,19 @@
       <div class="space-y-4">
         <details class="bg-slate-800 rounded-lg p-6 shadow-lg group animate-fade-in delay-100">
           <summary class="text-lg font-semibold text-white cursor-pointer flex items-center justify-between hover:text-blue-300 transition-colors">
-            How long does the training take?
+            How long does training take?
             <svg class="w-5 h-5 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
           </summary>
           <div class="mt-4 text-gray-300 leading-relaxed">
-            <p>Our programs are flexible and tailored to your team's needs. Typically, workshops run for 4-12 weeks with 1-2 sessions per week. The AI-powered feedback tools provide ongoing support that employees can access 24/7 for continuous improvement.</p>
+            <p>We offer three flexible engagement options to meet your organisation's needs:</p>
+            <ul class="mt-3 space-y-2 ml-4">
+              <li>• <strong>12-week trial:</strong> Perfect for testing the program with a small group</li>
+              <li>• <strong>6-month subscription:</strong> Ideal for seeing measurable results</li>
+              <li>• <strong>1-year subscription:</strong> Best value for long-term transformation</li>
+            </ul>
+            <p class="mt-3">All programs include weekly workshops, 24/7 web platform access, cultural audit reports, performance reports and more. Details coming soon!</p>
           </div>
         </details>
 
@@ -631,13 +658,13 @@
 
         <details class="bg-slate-800 rounded-lg p-6 shadow-lg group animate-fade-in delay-300">
           <summary class="text-lg font-semibold text-white cursor-pointer flex items-center justify-between hover:text-blue-300 transition-colors">
-            Can training be delivered remotely or does it have to be in-person?
+            How is training delivered?
             <svg class="w-5 h-5 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
           </summary>
           <div class="mt-4 text-gray-300 leading-relaxed">
-            <p>We offer flexible delivery options including in-person workshops, virtual sessions, and hybrid models. Our AI-powered tools work seamlessly in any format, and we can customise the approach based on your team's preferences and operational requirements.</p>
+            <p>Only in person workshops and digital platform access. We know that language learning needs to be face to face for best results. Our hybrid solution matches the need for flexibility, accountability and real results.</p>
           </div>
         </details>
 
@@ -704,7 +731,7 @@
     </div>
   </section>
 
-  <!-- About Us Section -->
+  <!-- About Us Section (Updated with photo placeholders) -->
   <section id="about" class="py-16 border-b border-sky-800">
     <div class="max-w-6xl mx-auto px-6">
       <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-white mb-4 text-center animate-fade-in">About Us</h2>
@@ -713,8 +740,15 @@
       </p>
       
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        <!-- Seshnie's Bio -->
+        <!-- Seshnie's Bio (Updated) -->
         <div class="bg-slate-800 rounded-xl p-8 shadow-lg animate-fade-in delay-200">
+          <!-- Photo placeholder -->
+          <div class="mb-6 text-center">
+            <div class="w-48 h-48 mx-auto bg-slate-700 rounded-full flex items-center justify-center border-4 border-blue-500/30">
+              <span class="text-gray-400 text-sm">Photo coming soon</span>
+            </div>
+          </div>
+          
           <h3 class="text-2xl font-semibold text-white mb-4">Seshnie Taylor – Founder & CEO</h3>
           <div class="space-y-4 text-gray-300">
             <p>
@@ -724,7 +758,7 @@
               With a background in teaching, startups, and navigating life as a migrant herself, she created <strong>Vocare</strong> to help skilled professionals find their voice - and feel heard.
             </p>
             <p>
-              She believes everyone has a story worth telling, and that the world would be better if we all listened more, judged less, and shared our lunch. When she's not developing AI tools for pronunciation or running bespoke workshops, you'll find her chasing her Samoyed, reading the same 3 toddler books her child is obsessed with, or low-key changing the world between coffee breaks.
+              She believes everyone has a story worth telling, and that the world would be better if we all listened more, judged less, and shared our lunch. When she's not developing AI tools for pronunciation or running bespoke workshops, you'll find her chasing her fluffy son- (that guy on the right), reading the same 3 toddler books her child is obsessed with, or low-key changing the world between coffee breaks.
             </p>
             <p class="text-blue-300 font-semibold italic">
               Her motto? "You can't be what you can't see."
@@ -734,6 +768,13 @@
         
         <!-- Alfie's Bio -->
         <div class="bg-slate-800 rounded-xl p-8 shadow-lg animate-fade-in delay-300">
+          <!-- Photo placeholder -->
+          <div class="mb-6 text-center">
+            <div class="w-48 h-48 mx-auto bg-slate-700 rounded-full flex items-center justify-center border-4 border-blue-500/30">
+              <span class="text-gray-400 text-sm">Alfie's photo coming soon</span>
+            </div>
+          </div>
+          
           <h3 class="text-2xl font-semibold text-white mb-4">Alfie – Chief Stress Management Officer (CSMO)</h3>
           <div class="space-y-4 text-gray-300">
             <p>
@@ -742,7 +783,6 @@
             <p>
               <strong>Special skills:</strong> Emotional support. Unconditional loyalty. Expert-level fluff.
             </p>
-            <!-- Optional: Add Alfie's photo here if you have one -->
             <div class="mt-6 p-4 bg-slate-700 rounded-lg text-center">
               <p class="text-sm text-blue-300">🐕 Woof! (That's "Welcome to Vocare" in Samoyed)</p>
             </div>
@@ -842,6 +882,27 @@
   </footer>
 
   <script>
+    // Video placeholder functionality
+    function playVideo() {
+      const placeholder = document.querySelector('.video-placeholder');
+      const container = document.getElementById('video-container');
+      
+      // Hide placeholder
+      placeholder.style.display = 'none';
+      
+      // Show video container with placeholder message
+      container.classList.remove('hidden');
+      container.innerHTML = `
+        <div class="bg-slate-700 rounded-xl p-20 text-center">
+          <p class="text-xl text-gray-300 mb-4">Video player will appear here</p>
+          <p class="text-gray-400">The introduction video is being prepared and will be available soon!</p>
+        </div>
+      `;
+      
+      // In production, this would be replaced with actual video embed code like:
+      // container.innerHTML = '<iframe src="video-url" class="w-full h-96" frameborder="0" allowfullscreen></iframe>';
+    }
+
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
